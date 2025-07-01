@@ -45,7 +45,7 @@ struct PostView: View {
                 .fontWeight(.bold)
             }
             .padding(.horizontal)
-            Text("Time to party with the team")
+            Text("streets")
                 .padding(.horizontal)
             Image("office")
                 .resizable()

@@ -14,6 +14,7 @@ struct HeaderView: View {
             // Navigates to the profile when pfp is clicked
             NavigationLink{
                 ProfileView()
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 Image("profilePic")
                     .resizable()
