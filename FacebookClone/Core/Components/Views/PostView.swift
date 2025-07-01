@@ -47,7 +47,7 @@ struct PostView: View {
             .padding(.horizontal)
             Text("streets")
                 .padding(.horizontal)
-            Image("office")
+            Image("carPost")
                 .resizable()
                 .scaledToFill()
             HStack(spacing: 3){

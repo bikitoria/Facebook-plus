@@ -14,7 +14,7 @@ struct ProfileHeaderView: View {
     }
     var body: some View {
         VStack{
-            Image("cover_picture")
+            Image("profileCover")
                 .resizable()
                 .scaledToFill()
                 .frame(width: width, height: 250)

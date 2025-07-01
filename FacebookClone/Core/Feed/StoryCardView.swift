@@ -9,14 +9,14 @@ import SwiftUI
 
 struct StoryCardView: View {
     var body: some View {
-        Image("dubai_2024")
+        Image("flowerStory")
             .resizable()
             .scaledToFill()
             .frame(width: 100, height: 170)
             .clipShape(RoundedRectangle(cornerRadius: 15))
             .overlay{
                 VStack(alignment: .leading){
-                    Image("pam")
+                    Image("tinaProfilePic")
                         .resizable()
                         .scaledToFill()
                         .frame(width: 35, height: 35)
@@ -26,7 +26,7 @@ struct StoryCardView: View {
                                 .stroke(.blue, lineWidth: 3)
                         }
                     Spacer()
-                    Text("Pam")
+                    Text("Tina")
                         .foregroundStyle(.white)
                         .font(.system(size:12, weight: .semibold))
                     HStack { Spacer()
