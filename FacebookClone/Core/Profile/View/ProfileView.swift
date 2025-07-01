@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         GeometryReader { proxy in
             ScrollView{
                 VStack{
                     ProfileHeaderView(width: proxy.size.width)
+                    DividerView(width: proxy.size.width)
+                    ProfileOptionsView()
+                    ProfileFriendsView(width: proxy.size.width)
                     DividerView(width: proxy.size.width)
                 }
             }
@@ -43,6 +47,7 @@ struct ProfileView: View {
 #Preview {
     ProfileView()
 }
+
 
 
 
