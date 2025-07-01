@@ -22,9 +22,10 @@ struct FeedView: View {
                         
                         ForEach(0 ..< 3){ _ in
                             PostView(facebookBlue: facebookBlue)
+                            DividerView(width: proxy.size.width - 15)
                         }
                         
-                        DividerView(width: proxy.size.width - 15)
+                        
                         Spacer()    // puts header at the top
                     }
                     .toolbar {
