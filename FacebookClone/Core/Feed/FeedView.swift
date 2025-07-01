@@ -13,35 +13,43 @@ struct FeedView: View {
         NavigationStack{
 
             GeometryReader { proxy in
-                VStack{
-                    HeaderView()
-                    DividerView(width: proxy.size.width)
-                    StoryFeedView()
-                    DividerView(width: proxy.size.width)
-                    Spacer()    // puts header at the top
-                }
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Text("facebook")
-                            .font(.system(size: 32, weight:.bold))
-                            .foregroundStyle(facebookBlue)
+                ScrollView {
+                    VStack{
+                        HeaderView()
+                        DividerView(width: proxy.size.width)
+                        StoryFeedView()
+                        DividerView(width: proxy.size.width)
+                        
+                        ForEach(0 ..< 3){ _ in
+                            PostView(facebookBlue: facebookBlue)
+                        }
+                        
+                        DividerView(width: proxy.size.width - 15)
+                        Spacer()    // puts header at the top
                     }
-                    ToolbarItem(placement: .topBarTrailing)
-                    {
-                        HStack(spacing: 24){
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 24, height: 24)
-                            Image(systemName: "magnifyingglass")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 24, height: 24)
-                                .font(.system(size: 18, weight: .bold))
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 24, height: 24)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarLeading) {
+                            Text("facebook")
+                                .font(.system(size: 32, weight:.bold))
+                                .foregroundStyle(facebookBlue)
+                        }
+                        ToolbarItem(placement: .topBarTrailing)
+                        {
+                            HStack(spacing: 24){
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 24, height: 24)
+                                Image(systemName: "magnifyingglass")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 24, height: 24)
+                                    .font(.system(size: 18, weight: .bold))
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 24, height: 24)
+                            }
                         }
                     }
                 }
@@ -53,6 +61,7 @@ struct FeedView: View {
 #Preview {
     FeedView()
 }
+
 
 
 
