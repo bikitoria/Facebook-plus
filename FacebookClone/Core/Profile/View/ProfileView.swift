@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @Environment(\.dismiss) private var dismiss
-    
+    private var facebookBlue = Color(red: 26/255, green: 103/255, blue: 178/255)
     var body: some View {
         GeometryReader { proxy in
             ScrollView{
@@ -19,6 +19,10 @@ struct ProfileView: View {
                     ProfileOptionsView()
                     ProfileFriendsView(width: proxy.size.width)
                     DividerView(width: proxy.size.width)
+                    ManageProfilePostsView(width: proxy.size.width)
+                    ForEach(0 ..< 2){ _ in
+                        PostView(facebookBlue: facebookBlue)
+                    }
                 }
             }
             .scrollIndicators(.hidden)
@@ -47,6 +51,7 @@ struct ProfileView: View {
 #Preview {
     ProfileView()
 }
+
 
 
 
