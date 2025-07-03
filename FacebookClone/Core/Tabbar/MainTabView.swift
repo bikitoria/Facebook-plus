@@ -30,7 +30,7 @@ struct MainTabView: View {
                 }
         
 
-            Text("Friends")
+            FriendsView()
                 .tabItem {
                     Image(systemName: "person.2")
                         .environment(\.symbolVariants, tabSelection == 2 ? .fill: .none)
