@@ -39,7 +39,7 @@ struct MainTabView: View {
                     tabSelection = 2
                 }
             
-            Text("MarketPlace")
+            MarketPlaceView()
                 .tabItem {
                     Image("marketplace")
                         .environment(\.symbolVariants, tabSelection == 3 ? .fill: .none)
