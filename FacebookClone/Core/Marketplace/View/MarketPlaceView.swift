@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MarketPlaceView: View {
+    @StateObject private var viewModel = MarketPlaceViewModel()
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing:1),
         .init(.flexible(), spacing:1)
@@ -38,15 +39,15 @@ struct MarketPlaceView: View {
                                 .foregroundStyle(.blue)
                         }
                         .padding()
-                        LazyVGrid(columns: gridItems){
-                            ForEach(0 ..< 6){ _ in
+                        LazyVGrid(columns: gridItems, spacing: 1){
+                            ForEach(viewModel.items){ item in
                                 VStack{
-                                    Image("camera")
+                                    Image(item.imageName)
                                         .resizable()
                                         .scaledToFill()
                                         .frame(width: (proxy.size.width / 2) - 3, height:(proxy.size.width / 2) - 3)
                                         .clipped()
-                                    Text("200$ - canon camera")
+                                    Text("\(item.item_price)$ - \(item.item_name)")
                                         .font(.subheadline)
                                         .fontWeight(.semibold)
                                         .padding(.vertical)
