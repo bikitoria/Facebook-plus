@@ -53,13 +53,7 @@ struct ShortCutsView: View {
             
             Button(action: {}, label: {
                 Text("See more")
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .frame(width: width - 30, height: 44)
-                    .background(Color(.systemGray5))
-                    .clipShape(RoundedRectangle(cornerRadius: 9))
-                    .foregroundStyle(.black)
-                    .padding(.vertical)
+                    .customButtonModifier(width: width)
             })
         }
         .padding(.horizontal)
