@@ -21,7 +21,7 @@ struct FeedView: View {
                         DividerView(width: proxy.size.width)
                         
                         ForEach(0 ..< 3){ _ in
-                            PostView(facebookBlue: facebookBlue)
+                            PostView(isVideo: false)
                             DividerView(width: proxy.size.width - 15)
                         }
                         
